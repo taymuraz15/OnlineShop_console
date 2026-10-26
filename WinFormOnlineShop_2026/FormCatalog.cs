@@ -24,7 +24,14 @@ namespace WinFormOnlineShop_2026
 
         private void listBoxCatalog_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (listBoxCatalog.SelectedIndex != -1)
+            {
+                int catalogIndex = listBoxCatalog.SelectedIndex + 1;
+                Product selectedProduct = catalog[catalogIndex];
+                labelProductName.Text = selectedProduct.Name;
+                labelDescription.Text = selectedProduct.Description;
+                labelPrice.Text = $"{selectedProduct.Price} руб.";
+            }
         }
     }
 }

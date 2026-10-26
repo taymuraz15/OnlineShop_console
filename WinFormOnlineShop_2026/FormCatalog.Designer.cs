@@ -36,6 +36,7 @@
             labelDescription = new Label();
             labelProductName = new Label();
             label2 = new Label();
+            labelPrice = new Label();
             panelCatalog.SuspendLayout();
             panelProduct.SuspendLayout();
             SuspendLayout();
@@ -80,6 +81,7 @@
             // panelProduct
             // 
             panelProduct.BackColor = SystemColors.ControlLight;
+            panelProduct.Controls.Add(labelPrice);
             panelProduct.Controls.Add(labelDescription);
             panelProduct.Controls.Add(labelProductName);
             panelProduct.Controls.Add(label2);
@@ -119,6 +121,16 @@
             label2.TabIndex = 1;
             label2.Text = "Карточка товара";
             // 
+            // labelPrice
+            // 
+            labelPrice.AutoSize = true;
+            labelPrice.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            labelPrice.Location = new Point(111, 296);
+            labelPrice.Name = "labelPrice";
+            labelPrice.Size = new Size(186, 30);
+            labelPrice.TabIndex = 4;
+            labelPrice.Text = "Название товара";
+            // 
             // FormCatalog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -146,5 +158,6 @@
         private Label labelProductName;
         private Label label2;
         private Label labelDescription;
+        private Label labelPrice;
     }
 }
