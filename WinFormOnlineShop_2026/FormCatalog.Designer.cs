@@ -33,10 +33,12 @@
             label1 = new Label();
             splitter1 = new Splitter();
             panelProduct = new Panel();
+            buttonShowCart = new Button();
+            buttonAddToCart = new Button();
+            labelPrice = new Label();
             labelDescription = new Label();
             labelProductName = new Label();
             label2 = new Label();
-            labelPrice = new Label();
             panelCatalog.SuspendLayout();
             panelProduct.SuspendLayout();
             SuspendLayout();
@@ -57,7 +59,7 @@
             listBoxCatalog.ItemHeight = 15;
             listBoxCatalog.Location = new Point(27, 63);
             listBoxCatalog.Name = "listBoxCatalog";
-            listBoxCatalog.Size = new Size(179, 349);
+            listBoxCatalog.Size = new Size(219, 349);
             listBoxCatalog.TabIndex = 1;
             listBoxCatalog.SelectedIndexChanged += listBoxCatalog_SelectedIndexChanged;
             // 
@@ -81,6 +83,8 @@
             // panelProduct
             // 
             panelProduct.BackColor = SystemColors.ControlLight;
+            panelProduct.Controls.Add(buttonShowCart);
+            panelProduct.Controls.Add(buttonAddToCart);
             panelProduct.Controls.Add(labelPrice);
             panelProduct.Controls.Add(labelDescription);
             panelProduct.Controls.Add(labelProductName);
@@ -91,12 +95,46 @@
             panelProduct.Size = new Size(545, 450);
             panelProduct.TabIndex = 2;
             // 
+            // buttonShowCart
+            // 
+            buttonShowCart.BackColor = Color.Thistle;
+            buttonShowCart.Font = new Font("Bahnschrift SemiBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            buttonShowCart.Location = new Point(114, 380);
+            buttonShowCart.Name = "buttonShowCart";
+            buttonShowCart.Size = new Size(286, 48);
+            buttonShowCart.TabIndex = 6;
+            buttonShowCart.Text = "ПЕРЕЙТИ В КОРЗИНУ";
+            buttonShowCart.UseVisualStyleBackColor = false;
+            buttonShowCart.Click += buttonShowCart_Click;
+            // 
+            // buttonAddToCart
+            // 
+            buttonAddToCart.BackColor = SystemColors.ActiveCaption;
+            buttonAddToCart.Font = new Font("Bahnschrift", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            buttonAddToCart.Location = new Point(114, 298);
+            buttonAddToCart.Name = "buttonAddToCart";
+            buttonAddToCart.Size = new Size(286, 48);
+            buttonAddToCart.TabIndex = 5;
+            buttonAddToCart.Text = "ДОБАВИТЬ В КОРЗИНУ";
+            buttonAddToCart.UseVisualStyleBackColor = false;
+            buttonAddToCart.Click += buttonAddToCart_Click;
+            // 
+            // labelPrice
+            // 
+            labelPrice.AutoSize = true;
+            labelPrice.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            labelPrice.Location = new Point(114, 251);
+            labelPrice.Name = "labelPrice";
+            labelPrice.Size = new Size(74, 30);
+            labelPrice.TabIndex = 4;
+            labelPrice.Text = "0 руб.";
+            // 
             // labelDescription
             // 
             labelDescription.BackColor = SystemColors.ActiveCaption;
             labelDescription.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             labelDescription.ForeColor = SystemColors.ActiveCaptionText;
-            labelDescription.Location = new Point(111, 143);
+            labelDescription.Location = new Point(114, 98);
             labelDescription.Name = "labelDescription";
             labelDescription.Size = new Size(286, 132);
             labelDescription.TabIndex = 3;
@@ -106,7 +144,7 @@
             // 
             labelProductName.AutoSize = true;
             labelProductName.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            labelProductName.Location = new Point(111, 103);
+            labelProductName.Location = new Point(114, 58);
             labelProductName.Name = "labelProductName";
             labelProductName.Size = new Size(186, 30);
             labelProductName.TabIndex = 2;
@@ -115,21 +153,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(111, 75);
+            label2.Location = new Point(114, 30);
             label2.Name = "label2";
             label2.Size = new Size(98, 15);
             label2.TabIndex = 1;
             label2.Text = "Карточка товара";
-            // 
-            // labelPrice
-            // 
-            labelPrice.AutoSize = true;
-            labelPrice.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            labelPrice.Location = new Point(111, 296);
-            labelPrice.Name = "labelPrice";
-            labelPrice.Size = new Size(186, 30);
-            labelPrice.TabIndex = 4;
-            labelPrice.Text = "Название товара";
             // 
             // FormCatalog
             // 
@@ -159,5 +187,7 @@
         private Label label2;
         private Label labelDescription;
         private Label labelPrice;
+        private Button buttonAddToCart;
+        private Button buttonShowCart;
     }
 }

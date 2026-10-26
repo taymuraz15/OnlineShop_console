@@ -13,7 +13,25 @@ namespace OnlineShop
         public int Count { get {return items.Count();} }
 
         public void Add(Product product)
-            { items.Add(new CartItem(product)); }
+        {
+            CartItem selectedProduct = null;
+            foreach (CartItem item in items)
+            {
+                if (item.Product.Name == product.Name)
+                {
+                    selectedProduct = item;
+                    break; 
+                }
+            }
+            if (selectedProduct != null)
+            {
+                selectedProduct.Count++;
+            }
+            else
+            {
+                items.Add(new CartItem(product));
+            }
+        }
 
         public void Delete()
             {  }

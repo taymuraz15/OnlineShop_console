@@ -5,6 +5,7 @@ namespace WinFormOnlineShop_2026
     public partial class FormCatalog : Form
     {
         Catalog catalog = new Catalog();
+        Cart cart = new Cart();
         public FormCatalog()
         {
             InitializeComponent();
@@ -31,6 +32,23 @@ namespace WinFormOnlineShop_2026
                 labelProductName.Text = selectedProduct.Name;
                 labelDescription.Text = selectedProduct.Description;
                 labelPrice.Text = $"{selectedProduct.Price} руб.";
+            }
+        }
+
+        private void buttonShowCart_Click(object sender, EventArgs e)
+        {
+            FormCart formCart = new FormCart(cart);
+            formCart.Show();
+        }
+
+        private void buttonAddToCart_Click(object sender, EventArgs e)
+        {
+            if (listBoxCatalog.SelectedIndex != -1)
+            {
+                int catalogIndex = listBoxCatalog.SelectedIndex + 1;
+                Product selectedProduct = catalog[catalogIndex];
+                cart.Add(selectedProduct);
+                MessageBox.Show($"Товар   {selectedProduct.Name}   добавлен в корзину!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
