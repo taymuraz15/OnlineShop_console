@@ -40,5 +40,25 @@ namespace OnlineShop
         public CartItem[] getAll()
             { return items.ToArray(); }
 
+        public void AddOneInCart(CartItem item)
+        {
+            if (item != null)
+            {
+                item.Count++;
+            }
+        }
+
+        public void RemoveOneInCart(CartItem item)
+        {
+            if (item != null)
+            {
+                item.Count--;
+                if (item.Count <= 0)
+                {
+                    items.Remove(item);
+                }
+            }
+        }
+
     }
 }

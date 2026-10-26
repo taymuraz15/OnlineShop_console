@@ -30,5 +30,36 @@ namespace WinFormOnlineShop_2026
         {
 
         }
+
+        private void buttonPlus_Click(object sender, EventArgs e)
+        {
+            if (listBoxCart.SelectedIndex != -1)
+            {
+                CartItem selectedItem = this.cart.getAll()[listBoxCart.SelectedIndex];
+                this.cart.AddOneInCart(selectedItem);
+                int savedIndex = listBoxCart.SelectedIndex;
+                ShowCart();
+                if (listBoxCart.Items.Count > 0)
+                    listBoxCart.SelectedIndex = savedIndex;
+            }
+        }
+
+        private void buttonMinus_Click(object sender, EventArgs e)
+        {
+            if (listBoxCart.SelectedIndex != -1)
+            {
+                CartItem selectedItem = this.cart.getAll()[listBoxCart.SelectedIndex];
+                this.cart.RemoveOneInCart(selectedItem);
+                int savedIndex = listBoxCart.SelectedIndex;
+                ShowCart();
+                if (listBoxCart.Items.Count > 0)
+                {
+                    if (savedIndex >= listBoxCart.Items.Count)
+                        listBoxCart.SelectedIndex = listBoxCart.Items.Count - 1;
+                    else
+                        listBoxCart.SelectedIndex = savedIndex;
+                }
+            }
+        }
     }
 }

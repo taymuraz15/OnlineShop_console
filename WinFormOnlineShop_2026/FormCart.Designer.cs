@@ -31,6 +31,8 @@
             listBoxCart = new ListBox();
             labelTotal = new Label();
             label1 = new Label();
+            buttonPlus = new Button();
+            buttonMinus = new Button();
             SuspendLayout();
             // 
             // listBoxCart
@@ -63,11 +65,39 @@
             label1.TabIndex = 2;
             label1.Text = "Корзина";
             // 
+            // buttonPlus
+            // 
+            buttonPlus.BackColor = SystemColors.ActiveCaption;
+            buttonPlus.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            buttonPlus.Location = new Point(282, 18);
+            buttonPlus.Name = "buttonPlus";
+            buttonPlus.Size = new Size(46, 51);
+            buttonPlus.TabIndex = 3;
+            buttonPlus.Text = "+";
+            buttonPlus.TextAlign = ContentAlignment.TopCenter;
+            buttonPlus.UseVisualStyleBackColor = false;
+            buttonPlus.Click += buttonPlus_Click;
+            // 
+            // buttonMinus
+            // 
+            buttonMinus.BackColor = SystemColors.ActiveCaption;
+            buttonMinus.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            buttonMinus.Location = new Point(365, 18);
+            buttonMinus.Name = "buttonMinus";
+            buttonMinus.Size = new Size(46, 51);
+            buttonMinus.TabIndex = 4;
+            buttonMinus.Text = "-";
+            buttonMinus.TextAlign = ContentAlignment.TopCenter;
+            buttonMinus.UseVisualStyleBackColor = false;
+            buttonMinus.Click += buttonMinus_Click;
+            // 
             // FormCart
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonMinus);
+            Controls.Add(buttonPlus);
             Controls.Add(label1);
             Controls.Add(labelTotal);
             Controls.Add(listBoxCart);
@@ -83,5 +113,7 @@
         private ListBox listBoxCart;
         private Label labelTotal;
         private Label label1;
+        private Button buttonPlus;
+        private Button buttonMinus;
     }
 }
